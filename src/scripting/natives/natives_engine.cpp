@@ -204,13 +204,13 @@ void GetCommandParamValue(ScriptContext& scriptContext)
     switch (paramType)
     {
         case DATA_TYPE_STRING:
-            scriptContext.SetResult(CommandLine()->ParmValue(paramName, scriptContext.GetArgument<const char*>(iContextIndex)));
+            scriptContext.SetResult(CommandLine()->ParmValue(MakeStringToken(paramName), scriptContext.GetArgument<const char*>(iContextIndex)));
             return;
         case DATA_TYPE_INT:
-            scriptContext.SetResult(CommandLine()->ParmValue(paramName, scriptContext.GetArgument<int>(iContextIndex)));
+            scriptContext.SetResult(CommandLine()->ParmValue(MakeStringToken(paramName), scriptContext.GetArgument<int>(iContextIndex)));
             return;
         case DATA_TYPE_FLOAT:
-            scriptContext.SetResult(CommandLine()->ParmValue(paramName, scriptContext.GetArgument<float>(iContextIndex)));
+            scriptContext.SetResult(CommandLine()->ParmValue(MakeStringToken(paramName), scriptContext.GetArgument<float>(iContextIndex)));
             return;
     }
 

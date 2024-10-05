@@ -193,6 +193,7 @@ bool EventManager::OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast)
         RETURN_META_VALUE(MRES_IGNORED, false);
     }
 
+   
     const char* szName = pEvent->GetName();
     bool bLocalDontBroadcast = bDontBroadcast;
     auto I = m_hooksMap.find(szName);

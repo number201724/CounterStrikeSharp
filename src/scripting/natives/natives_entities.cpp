@@ -199,23 +199,23 @@ const char* GetPlayerIpAddress(ScriptContext& script_context)
     return pPlayer->GetIpAddress();
 }
 
-void HookEntityOutput(ScriptContext& script_context)
-{
-    auto szClassname = script_context.GetArgument<const char*>(0);
-    auto szOutput = script_context.GetArgument<const char*>(1);
-    auto callback = script_context.GetArgument<CallbackT>(2);
-    auto mode = script_context.GetArgument<HookMode>(3);
-    globals::entityManager.HookEntityOutput(szClassname, szOutput, callback, mode);
-}
-
-void UnhookEntityOutput(ScriptContext& script_context)
-{
-    auto szClassname = script_context.GetArgument<const char*>(0);
-    auto szOutput = script_context.GetArgument<const char*>(1);
-    auto callback = script_context.GetArgument<CallbackT>(2);
-    auto mode = script_context.GetArgument<HookMode>(3);
-    globals::entityManager.UnhookEntityOutput(szClassname, szOutput, callback, mode);
-}
+//void HookEntityOutput(ScriptContext& script_context)
+//{
+//    auto szClassname = script_context.GetArgument<const char*>(0);
+//    auto szOutput = script_context.GetArgument<const char*>(1);
+//    auto callback = script_context.GetArgument<CallbackT>(2);
+//    auto mode = script_context.GetArgument<HookMode>(3);
+//   // globals::entityManager.HookEntityOutput(szClassname, szOutput, callback, mode);
+//}
+//
+//void UnhookEntityOutput(ScriptContext& script_context)
+//{
+//    auto szClassname = script_context.GetArgument<const char*>(0);
+//    auto szOutput = script_context.GetArgument<const char*>(1);
+//    auto callback = script_context.GetArgument<CallbackT>(2);
+//    auto mode = script_context.GetArgument<HookMode>(3);
+//    //globals::entityManager.UnhookEntityOutput(szClassname, szOutput, callback, mode);
+//}
 
 void AcceptInput(ScriptContext& script_context)
 {
@@ -269,8 +269,8 @@ REGISTER_NATIVES(entities, {
     ScriptEngine::RegisterNativeHandler("GET_FIRST_ACTIVE_ENTITY", GetFirstActiveEntity);
     ScriptEngine::RegisterNativeHandler("GET_PLAYER_AUTHORIZED_STEAMID", GetPlayerAuthorizedSteamID);
     ScriptEngine::RegisterNativeHandler("GET_PLAYER_IP_ADDRESS", GetPlayerIpAddress);
-    ScriptEngine::RegisterNativeHandler("HOOK_ENTITY_OUTPUT", HookEntityOutput);
-    ScriptEngine::RegisterNativeHandler("UNHOOK_ENTITY_OUTPUT", UnhookEntityOutput);
+//    ScriptEngine::RegisterNativeHandler("HOOK_ENTITY_OUTPUT", HookEntityOutput);
+//    ScriptEngine::RegisterNativeHandler("UNHOOK_ENTITY_OUTPUT", UnhookEntityOutput);
     ScriptEngine::RegisterNativeHandler("ACCEPT_INPUT", AcceptInput);
     ScriptEngine::RegisterNativeHandler("ADD_ENTITY_IO_EVENT", AddEntityIOEvent);
 })

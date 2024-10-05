@@ -85,10 +85,10 @@ EventManager eventManager;
 PlayerManager playerManager;
 TimerSystem timerSystem;
 ConCommandManager conCommandManager;
-EntityManager entityManager;
+//EntityManager entityManager;
 ChatManager chatManager;
 ServerManager serverManager;
-VoiceManager voiceManager;
+//VoiceManager voiceManager;
 TickScheduler tickScheduler;
 UserMessageManager userMessageManager;
 
@@ -141,7 +141,10 @@ void DetourGameEventManagerInit(IGameEventManager2* pGameEventManager)
 }
 
 int source_hook_pluginid = 0;
-CGlobalVars* getGlobalVars() { return engineServer2->GetServerGlobals(); }
-
+CGlobalVars* getGlobalVars() {
+	INetworkGameServer *server = networkServerService->GetIGameServer();
+	if(!server) return nullptr;
+	return networkServerService->GetIGameServer()->GetGlobals();
+}
 } // namespace globals
 } // namespace counterstrikesharp

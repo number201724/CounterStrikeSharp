@@ -21,18 +21,18 @@
 #include "scripting/script_engine.h"
 
 namespace counterstrikesharp {
-class ScriptCallback;
+//class ScriptCallback;
 
-class VoiceManager : public GlobalClass
-{
-  public:
-    VoiceManager();
-    ~VoiceManager();
-    void OnAllInitialized() override;
-    void OnShutdown() override;
-    bool SetClientListening(CPlayerSlot iReceiver, CPlayerSlot iSender, bool bListen);
-    void OnClientCommand(CPlayerSlot slot, const CCommand& args);
-  private:
-};
+//class VoiceManager : public GlobalClass
+//{
+//  public:
+//    VoiceManager();
+//    ~VoiceManager();
+//    void OnAllInitialized() override;
+//    void OnShutdown() override;
+//    bool SetClientListening(CPlayerSlot iReceiver, CPlayerSlot iSender, bool bListen);
+//    void OnClientCommand(CPlayerSlot slot, const CCommand& args);
+//  private:
+//};
 
 } // namespace counterstrikesharp

@@ -102,12 +102,12 @@ extern CallbackManager callbackManager;
 extern ConVarManager convarManager;
 extern PlayerManager playerManager;
 extern MenuManager menuManager;
-extern EntityManager entityManager;
+//extern EntityManager entityManager;
 extern TimerSystem timerSystem;
 extern ChatCommands chatCommands;
 extern ChatManager chatManager;
 extern ServerManager serverManager;
-extern VoiceManager voiceManager;
+//extern VoiceManager voiceManager;
 extern TickScheduler tickScheduler;
 
 extern HookManager hookManager;

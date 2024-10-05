@@ -32,30 +32,30 @@ class ScriptCallback;
 
 typedef std::pair<std::string, std::string> OutputKey_t;
 
-class CEntityListener : public IEntityListener {
-    void OnEntitySpawned(CEntityInstance *pEntity) override;
-    void OnEntityCreated(CEntityInstance *pEntity) override;
-    void OnEntityDeleted(CEntityInstance *pEntity) override;
-    void OnEntityParentChanged(CEntityInstance *pEntity, CEntityInstance *pNewParent) override;
-};
+//class CEntityListener : public IEntityListener {
+//    void OnEntitySpawned(CEntityInstance *pEntity) override;
+//    void OnEntityCreated(CEntityInstance *pEntity) override;
+//    void OnEntityDeleted(CEntityInstance *pEntity) override;
+//    void OnEntityParentChanged(CEntityInstance *pEntity, CEntityInstance *pNewParent) override;
+//};
 
-class EntityManager : public GlobalClass {
-    friend CEntityListener;
-public:
-    EntityManager();
-    ~EntityManager();
-    void OnAllInitialized() override;
-    void OnShutdown() override;
-    void HookEntityOutput(const char* szClassname, const char* szOutput, CallbackT fnCallback, HookMode mode);
-    void UnhookEntityOutput(const char* szClassname, const char* szOutput, CallbackT fnCallback, HookMode mode);
-    CEntityListener entityListener;
-    std::map<OutputKey_t, CallbackPair*> m_pHookMap;
-private:
-    ScriptCallback *on_entity_spawned_callback;
-    ScriptCallback *on_entity_created_callback;
-    ScriptCallback *on_entity_deleted_callback;
-    ScriptCallback *on_entity_parent_changed_callback;
-};
+//class EntityManager : public GlobalClass {
+//    friend CEntityListener;
+//public:
+//    EntityManager();
+//    ~EntityManager();
+//    void OnAllInitialized() override;
+//    void OnShutdown() override;
+//    void HookEntityOutput(const char* szClassname, const char* szOutput, CallbackT fnCallback, HookMode mode);
+//    void UnhookEntityOutput(const char* szClassname, const char* szOutput, CallbackT fnCallback, HookMode mode);
+//    CEntityListener entityListener;
+//    std::map<OutputKey_t, CallbackPair*> m_pHookMap;
+//private:
+//    ScriptCallback *on_entity_spawned_callback;
+//    ScriptCallback *on_entity_created_callback;
+//    ScriptCallback *on_entity_deleted_callback;
+//    ScriptCallback *on_entity_parent_changed_callback;
+//};
 
 
 enum EntityIOTargetType_t

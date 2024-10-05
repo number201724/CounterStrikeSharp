@@ -147,11 +147,11 @@ bool CounterStrikeSharpMMPlugin::Load(PluginId id, ISmmAPI* ismm, char* error, s
         CSSHARP_CORE_ERROR("Failed to initialize .NET runtime");
     }
 
-    if (!InitGameSystems())
-    {
-        CSSHARP_CORE_ERROR("Failed to initialize GameSystem!");
-        return false;
-    }
+//    if (!InitGameSystems())
+//    {
+//        CSSHARP_CORE_ERROR("Failed to initialize GameSystem!");
+//        return false;
+//    }
     CSSHARP_CORE_INFO("Initialized GameSystem.");
 
     CSSHARP_CORE_INFO("Hooks added.");
@@ -166,7 +166,7 @@ bool CounterStrikeSharpMMPlugin::Load(PluginId id, ISmmAPI* ismm, char* error, s
 void CounterStrikeSharpMMPlugin::Hook_StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)
 {
     globals::entitySystem = interfaces::pGameResourceServiceServer->GetGameEntitySystem();
-    globals::entitySystem->AddListenerEntity(&globals::entityManager.entityListener);
+   // globals::entitySystem->AddListenerEntity(&globals::entityManager.entityListener);
     globals::timerSystem.OnStartupServer();
 
     on_activate_callback->ScriptContext().Reset();

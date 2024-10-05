@@ -311,7 +311,7 @@ void PlayerManager::OnClientCommand(CPlayerSlot slot, const CCommand& args) cons
 
     const char* cmd = args.Arg(0);
 
-    globals::voiceManager.OnClientCommand(slot, args);
+    // globals::voiceManager.OnClientCommand(slot, args);
 
     auto result = globals::conCommandManager.ExecuteCommandCallbacks(
         cmd, CCommandContext(CommandTarget_t::CT_NO_TARGET, slot), args, HookMode::Pre, CommandCallingContext::Console);
